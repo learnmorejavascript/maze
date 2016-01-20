@@ -15,6 +15,8 @@ var finish = '14,7';
 var doReturn = false;
 var doRun = false;
 
+var ran = false;
+
 var mouseDown = false; 
 document.body.onmousedown = function() {
   mouseDown=true;
@@ -116,8 +118,9 @@ var addWall = function(wall, clicked) {
     }
   }
   
-  if (clicked) {
+  if (ran && clicked) {
     refreshTable();
+	ran = false;
   }
 }
 
@@ -297,6 +300,7 @@ var generatePlus = function(id) {
 
 var runInterval = '';
 var runner = function(drecs) {
+  ran = true;
   drecs = drecs.split('|');
   var drecsNum = 0;
   var picnum=1;
@@ -315,7 +319,7 @@ var runner = function(drecs) {
   var offset = { top: mapTable.offsetTop, left: mapTable.offsetLeft };
   
   var offsety = offset.top;
-  var offsetx = (window.outerWidth/2)-(450/2);
+  var offsetx = offset.left;
   
   function run() {
     var x = drecs[drecsNum].x();
@@ -401,8 +405,8 @@ var runner = function(drecs) {
     }
 
     if (drecs[drecsNum]==undefined) {
-    clearInterval(runInterval);
-    e('runner').style.display = "none";
+      clearInterval(runInterval);
+      e('runner').style.display = "none";
     }
   }
 
