@@ -1,0 +1,32 @@
+body {
+  margin: 0px;
+  font-size:16px;
+  font-family:carlito, arial;
+}
+
+#map-table {
+  -moz-user-select:none;
+  -webkit-user-select:none;
+}
+
+#buttons tr td {
+  padding:0px 10px;
+  cursor:pointer;
+  vertical-align:top;
+}
+
+#buttons tr td img { 
+  border:2px solid #f2f2f2;
+  transition-duration:0.25s;  
+  border-radius:10px;
+}
+
+#buttons tr td img:hover { 
+  border:2px solid #999;
+}
+
+.tile {
+ background-image: url("images/white.png");
+ width:30px;
+ height:30px;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Maze</title>
+    <link href="assets/styles.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+
+  <br>
+
+  <img id='runner' src='assets/images/guy.png' style='position:absolute;z-index:3;display:none;'>
+
+  <table id='map-table' cellspacing="0px" cellpadding="0px" style='margin:0px auto;cursor:pointer;border:1px solid #CDCDCD'>
+  </table>
+
+  <br><br>
+
+  <table id='buttons' style='text-align:center;margin:0px auto;'>
+    <tr>
+      <td>
+        <img src='assets/images/empty.png' onclick="button('empty');"><br>Empty
+      </td>
+      <td>
+        <img src='assets/images/gen.png' onclick='generateMaze();'><br>Maze
+      </td>
+      <td onclick='solve()'>
+        <img src='assets/images/solve.png'  style='border:none'/>
+      </td>
+      <td>
+        <img id='write' src='assets/images/write.png' alt='write' onclick="button('write');" style='border:2px solid #999;'><br>Draw
+      </td>
+      <td>
+        <img id='erase' src='assets/images/erase.png' alt='erase' onclick="button('erase');"><br>Erase
+      </td>
+    </tr>
+  </table>
+
+
+  </body>
+
+  <script type="text/javascript" src="assets/script.js"></script>
+</html>
